@@ -1,0 +1,44 @@
+<!-- index.html -->
+<form method="POST" action="{% url 'text_to_voice' %}">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="Please enter your text here:" required />
+    <select name="language">
+        <option value="en">English</option>
+        <option value="ur">Urdu</option>
+        <option value="hi">Hindi</option>
+        <option value="ru">Russian</option>      
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="pt">Portuguese</option>
+        <option value="de">German</option>
+        <option value="ar">Arabic</option>
+        <option value="zh-CN">Chinese (Mandarin)</option>
+        <option value="zh-TW">Chinese (Taiwanese)</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="it">Italian</>
+        <option value="pt-BR">Portuguese (Brazil)</option>
+        <option value="tr">Turkish</option>
+        <option value="nl">Dutch</option>
+        <option value="pl">Polish</>
+        <option value="sv">Swedish</option>
+        <option value="fi">Finnish</option>
+        <option value="da">Danish</option>
+        <option value="no">Norwegian</option>
+        <option value="hu">Hungarian</option>
+        <option value="el">Greek</option>
+        <option value="cs">Czech</option>
+        <option value="th">Thai</option>
+        <option value="vi">Vietnamese</option>
+        <option value="he">Hebrew</option>
+        <option value="id">Indonesian</option>
+        <option value="ms">Malay</option>
+        <option value="ro">Romanian</option>
+        <option value="uk">Ukrainian</option>
+        <option value="sk">Slovak</option>
+        <option value="sl">Slovenian</option>
+        <option value="hr">Croatian</option>
+      </select>
+      
+    <button type="submit">Submit</button>
+</form>
