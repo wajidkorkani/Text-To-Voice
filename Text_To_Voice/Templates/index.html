@@ -1,50 +1,118 @@
 {% extends "base.html" %}
 {% block head %}
 <title>Sounder</title>
+<style>
+  form{
+    min-width: 80%;
+    min-height: 80%;
+    border-radius: 50px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    drop-shadow: gray;
+  }
+  input{
+    grid-column-start: span 12;
+    min-height: 300px;
+    border-radius: 50px;
+    border: solid;
+    border-color: #0000FF;
+    color: black;
+    padding: 10px;
+    margin-bottom:50px;
+  }
+  input:hover{
+    outline:none;
+  }
+  input:focus{
+    outline:none;
+  }
+  button{
+    grid-column-start: span 5;
+    min-height: 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: #0000FF;
+    padding: 14px;
+    border:none;
+  }
+  button:hover{
+    grid-column-start: span 5;
+    min-height: 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: #000089;
+    padding: 14px;
+    border:none;
+  }  
+  select{
+    margin-right: 30px;
+    grid-column-start: span 7;
+    height: 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: #0000FF;
+    padding: 10px;
+    border:none;
+  }
+  select:hover{
+    margin-right: 30px;
+    grid-column-start: span 7;
+    height: 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: #000089;
+    padding: 10px;
+    border:none;
+  }
+</style>
 {% endblock %}
 
 {% block body %}
-<form method="POST" action="{% url 'text_to_voice' %}">
-  {% csrf_token %}
-  <input type="text" name="text" placeholder="Please enter your text here:" required />
-  <select name="language">
-      <option value="en">English</option>
-      <option value="ur">Urdu</option>
-      <option value="hi">Hindi</option>
-      <option value="ru">Russian</option>      
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
-      <option value="pt">Portuguese</option>
-      <option value="de">German</option>
-      <option value="ar">Arabic</option>
-      <option value="zh-CN">Chinese (Mandarin)</option>
-      <option value="zh-TW">Chinese (Taiwanese)</option>
-      <option value="ja">Japanese</option>
-      <option value="ko">Korean</option>
-      <option value="it">Italian</>
-      <option value="pt-BR">Portuguese (Brazil)</option>
-      <option value="tr">Turkish</option>
-      <option value="nl">Dutch</option>
-      <option value="pl">Polish</>
-      <option value="sv">Swedish</option>
-      <option value="fi">Finnish</option>
-      <option value="da">Danish</option>
-      <option value="no">Norwegian</option>
-      <option value="hu">Hungarian</option>
-      <option value="el">Greek</option>
-      <option value="cs">Czech</option>
-      <option value="th">Thai</option>
-      <option value="vi">Vietnamese</option>
-      <option value="he">Hebrew</option>
-      <option value="id">Indonesian</option>
-      <option value="ms">Malay</option>
-      <option value="ro">Romanian</option>
-      <option value="uk">Ukrainian</option>
-      <option value="sk">Slovak</option>
-      <option value="sl">Slovenian</option>
-      <option value="hr">Croatian</option>
-    </select>
-    
-  <button type="submit">Submit</button>
-</form>
+  <form method="POST" action="{% url 'text_to_voice' %}">
+    {% csrf_token %}
+    <input type="text" name="text" placeholder="Please enter your text here:" required />
+    <select name="language">
+        <option value="en">English</option>
+        <option value="ur">Urdu</option>
+        <option value="hi">Hindi</option>
+        <option value="ru">Russian</option>      
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="pt">Portuguese</option>
+        <option value="de">German</option>
+        <option value="ar">Arabic</option>
+        <option value="zh-CN">Chinese (Mandarin)</option>
+        <option value="zh-TW">Chinese (Taiwanese)</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="it">Italian</>
+        <option value="pt-BR">Portuguese (Brazil)</option>
+        <option value="tr">Turkish</option>
+        <option value="nl">Dutch</option>
+        <option value="pl">Polish</>
+        <option value="sv">Swedish</option>
+        <option value="fi">Finnish</option>
+        <option value="da">Danish</option>
+        <option value="no">Norwegian</option>
+        <option value="hu">Hungarian</option>
+        <option value="el">Greek</option>
+        <option value="cs">Czech</option>
+        <option value="th">Thai</option>
+        <option value="vi">Vietnamese</option>
+        <option value="he">Hebrew</option>
+        <option value="id">Indonesian</option>
+        <option value="ms">Malay</option>
+        <option value="ro">Romanian</option>
+        <option value="uk">Ukrainian</option>
+        <option value="sk">Slovak</option>
+        <option value="sl">Slovenian</option>
+        <option value="hr">Croatian</option>
+      </select>
+      
+    <button type="submit">Submit</button>
+  </form>
 {% endblock %}
