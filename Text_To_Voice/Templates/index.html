@@ -19,34 +19,34 @@
     min-height: 300px;
     border-radius: 50px;
     border: solid;
-    border-color: #0000FF;
+    border-color: orangered;
     color: black;
     padding: 10px;
     margin-bottom:50px;
+    text-align: center;
+    font-size:16px;
   }
   input:hover{
     outline:none;
+    border-color: yellow;
   }
   input:focus{
     outline:none;
+    border-color: orangered;
   }
   button{
     grid-column-start: span 5;
     min-height: 50px;
     border-radius: 50px;
     color: white;
-    background-color: #0000FF;
+    background-color: orangered;
     padding: 14px;
     border:none;
+    font-size: 20px;
   }
   button:hover{
-    grid-column-start: span 5;
-    min-height: 50px;
-    border-radius: 50px;
-    color: white;
-    background-color: #000089;
-    padding: 14px;
-    border:none;
+    outline:none;
+    background-color: yellow;
   }  
   select{
     margin-right: 30px;
@@ -54,19 +54,18 @@
     height: 50px;
     border-radius: 50px;
     color: white;
-    background-color: #0000FF;
+    background-color: orangered;
     padding: 10px;
     border:none;
+    font-size: 20px;
   }
   select:hover{
-    margin-right: 30px;
-    grid-column-start: span 7;
-    height: 50px;
-    border-radius: 50px;
-    color: white;
-    background-color: #000089;
-    padding: 10px;
-    border:none;
+    outline:none;
+    background-color: yellow;
+  }
+  select:focus{
+    background: orangered;
+    outline:none;
   }
 </style>
 {% endblock %}
