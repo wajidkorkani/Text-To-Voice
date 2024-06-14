@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #home{
+            background-color:orangered; 
+            color:white; 
+            font-size:30px; 
+            height: 50px; 
+            margin-left: 80%; 
+            text-align:center; 
+            text-decoration:none; 
+            display: flex; 
+            align-items:center; 
+            justify-content: center; 
+            width:200px; 
+            border-radius: 20px;"
+        }
+        #home:hover{
+            background-color: yellow;
+        }
+    </style>
     {% block head %}{% endblock %}
 </head>
 <body>
+    <nav >
+        <a href="{% url 'home' %}" id='home'>Home</a>
+    </nav>
     {% block body %}{% endblock %}    
 </body>
 </html>
