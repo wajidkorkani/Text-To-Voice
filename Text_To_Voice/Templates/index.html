@@ -14,24 +14,29 @@
     grid-template-columns: repeat(12, 1fr);
     drop-shadow: gray;
   }
-  input{
-    grid-column-start: span 12;
-    min-height: 300px;
-    border-radius: 50px;
-    border: solid;
-    border-color: #00308F;
-    color: black;
-    padding: 10px;
-    margin-bottom:50px;
-    text-align: center;
-    font-size:16px;
-  }
-  input:hover{
+  textarea{
+        grid-column-start: span 12;
+        height: 300px;
+        text-align: center;
+        border-radius: 20px;
+        border: solid;
+        border-color: #00308F;
+        color: black;
+        padding: 10px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        box-sizing: border-box;
+        resize: none; /* Optional: disable resizing */
+        overflow-y: auto; /* Optional: add vertical scroll bar when content exceeds height */
+    }
+
+    textarea:hover{
     outline:none;
     border-color: yellow;
   }
-  input:focus{
+  textarea:focus{
     outline:none;
+    text-align: start;
     border-color: #00308F;
   }
   button{
@@ -73,7 +78,7 @@
 {% block body %}
   <form method="POST" action="{% url 'text_to_voice' %}">
     {% csrf_token %}
-    <input type="text" name="text" placeholder="Please enter your text here:" required />
+    <textarea type="text" name="text" placeholder="Please enter your text here:" required ></textarea>
     <select name="language">
         <option value="en">English</option>
         <option value="ur">Urdu</option>
