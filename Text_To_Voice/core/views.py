@@ -6,7 +6,7 @@ from io import BytesIO
 def Home(request):
     template = 'index.html'
     context = {
-        "Hello": "Hello Django"
+        "note": "Note: Your audio voice file will be saved automatically after submiting the text once the process will be done."
     }
     return render(request, template, context)
 
@@ -36,4 +36,4 @@ def TextToVoice(request):
             }
             return render(request, template, context)
 
-    return redirect('/')
+    return redirect()
