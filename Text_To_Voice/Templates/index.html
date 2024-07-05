@@ -76,6 +76,7 @@
 {% endblock %}
 
 {% block body %}
+  <p style="color: #00308F; text-align: center;">{{ note }}</p>
   <form method="POST" action="{% url 'text_to_voice' %}">
     {% csrf_token %}
     <textarea type="text" name="text" placeholder="Please enter your text here:" required ></textarea>
