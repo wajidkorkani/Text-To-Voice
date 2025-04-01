@@ -12,7 +12,6 @@
     padding: 30px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    drop-shadow: gray;
   }
   textarea{
         grid-column-start: span 12;
@@ -20,8 +19,8 @@
         text-align: center;
         border-radius: 20px;
         border: solid;
-        border-color: #00308F;
-        color: black;
+        border-color: black;
+        color: white;
         padding: 10px;
         margin-bottom: 50px;
         font-size: 16px;
@@ -32,26 +31,30 @@
 
     textarea:hover{
     outline:none;
-    border-color: yellow;
+    border-color: black;
+    background-color: white;
+    color: black;
   }
   textarea:focus{
     outline:none;
     text-align: start;
-    border-color: #00308F;
+    border-color: black;
   }
   button{
     grid-column-start: span 5;
     min-height: 50px;
     border-radius: 50px;
     color: white;
-    background-color: #00308F;
+    background-color: black;
     padding: 14px;
     border:none;
     font-size: 20px;
   }
   button:hover{
     outline:none;
-    background-color: yellow;
+    border: solid 4px black;
+    background-color: white;
+    color: black;
   }  
   select{
     margin-right: 30px;
@@ -59,24 +62,27 @@
     height: 50px;
     border-radius: 50px;
     color: white;
-    background-color: #00308F;
+    background-color: black;
     padding: 10px;
     border:none;
     font-size: 20px;
   }
   select:hover{
     outline:none;
-    background-color: yellow;
+    border: solid 4px black;
+    background-color: white;
+    color: black;
   }
   select:focus{
-    background: #00308F;
-    outline:none;
+    border: solid 4px black;
+    background-color: white;
+    color: black;
   }
 </style>
 {% endblock %}
 
 {% block body %}
-  <p style="color: #00308F; text-align: center;">{{ note }}</p>
+  <p style="color: black; text-align: center;">{{ note }}</p>
   <form method="POST" action="{% url 'text_to_voice' %}">
     {% csrf_token %}
     <textarea type="text" name="text" placeholder="Please enter your text here:" required ></textarea>
